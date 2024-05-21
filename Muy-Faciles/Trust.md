@@ -48,6 +48,61 @@ Al identificar que el puerto 80 estaba abierto durante el escaneo, se procedió 
     - /server-status (Estado: 403, Tamaño: 275 bytes)
 
 
+#### Mario?
+
+![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/c5328732-6d9d-4aab-9f12-9809af10e50c)
+- se encontró el directorio "secret.php", que muestra un mensaje indicando que la web no se puede hackear.  Probar el acceso mediante SSH utilizando el usuario "mario". Es interesante explorar este nombre, ya que puede ser una pista para intentar acceder al sistema a través de SSH.
+
+# Fase 3- Explotación
+
+#### Hydra
+
+![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/57772e56-d251-4e94-ba32-fb0083dabd3e)
+**Prueba de Credenciales con Hydra**
+
+- **Usuario:** mario
+- **Contraseña Encontrada:** chocolate
+- **Protocolo:** SSH
+- **Dirección IP:** 172.17.0.2
+- **Resultado:** Se encontró una contraseña válida para el usuario mario.
+
+**Observaciones:**
+- Se ha encontrado la contraseña "chocolate" para el usuario mario en el servicio SSH.
+
+**Comando Utilizado**
+  `sudo hydra -l mario -P /usr/share/wordlists/rockyou.txt 172.17.0.2 ssh`
+
+- `sudo`: Este comando permite ejecutar Hydra con privilegios de superusuario, necesario para realizar algunas operaciones que requieren permisos especiales.
+- `hydra`: Es el comando principal de Hydra, una herramienta de prueba de penetración que se utiliza para realizar ataques de fuerza bruta o ataques de diccionario contra servicios de autenticación, como SSH en este caso.
+- `-l mario`: Especifica el nombre de usuario que se utilizará en el ataque de fuerza bruta. En este caso, estamos atacando al usuario "mario".
+- `-P /usr/share/wordlists/rockyou.txt`: Especifica la ubicación del archivo de contraseñas que se utilizará en el ataque. En este caso, estamos utilizando el archivo "rockyou.txt", que es un diccionario popular de contraseñas comunes.
+- `172.17.0.2`: Es la dirección IP del objetivo que estamos atacando.
+- `ssh`: Especifica el protocolo que estamos atacando, en este caso, SSH.
+
+### Dentro
+![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/dfacd200-f649-4097-a833-d1ce538df069)
+- Se intentó acceder al SSH utilizando el usuario `mario` y la contraseña `chocolate`, con éxito. y se realizo el tratamiento de la TTY.
+
+# Fase 4- Privilegios
+
+![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/9e70f74c-4a2b-49ed-ace1-ad4f1a45ac43)
+- Al revisar los privilegios de sudo del usuario `mario` con `sudo -l`, se observó que puede ejecutar el binario `/usr/bin/vim` con privilegios de sudo.
+
+### GTFobins
+![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/b9a889b5-36da-462b-9afe-40f76f9df5c5)
+**Búsqueda en GTFOBins:**
+
+- Encontramos que el binario sudo vim puede ser utilizado para ejecutar comandos como root sin ingresar la contraseña.
+
+**Comando Utilizado para Escalar Privilegios:**
+
+`sudo vim -c ':!/bin/sh'`
+
+**Acceso Obtenido:**
+- Se logró acceso con privilegios de root.
+
+![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/a03355e9-5494-4c3e-9dd9-da1482f4f7b5)
+
 
 
 
