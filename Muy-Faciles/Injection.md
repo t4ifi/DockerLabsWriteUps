@@ -37,6 +37,7 @@ Al identificar que el puerto 80 estaba abierto durante el escaneo, se procedió 
 
 ### Login
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/7d81e559-86d5-4fd5-8ec1-35436d3fa7f0)
+
 Al probar las credenciales `admin` `admin`, no entro.
 
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/58d78554-59cb-423d-9352-b09247e6e00d)
