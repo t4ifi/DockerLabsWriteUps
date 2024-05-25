@@ -36,22 +36,26 @@ Al identificar que el puerto 80 estaba abierto durante el escaneo, se procedió 
 
 #### index.php
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/6856b803-f752-43b2-8b2c-5104e10e4c2c)
+
 Realizando fuzzing con Feroxbuster encontramos un directorio llamado `index.php` que contenía una cadena de caracteres.
 
 # Fase 3- Explotación
 
 #### ssh
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/0f102627-5ad1-44eb-9da0-488b87dde5dc)
+
 Como no encontramos nada mas, probé hacer fuerza bruta al protocolo ssh dándole esa cadena como contraseña y un diccionario de usuarios, y encontró el usuario Carlos.
 
 # Fase 4- Privilegios
 
 #### Sudo -l
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/64ac61a9-c9d2-46f8-a5e6-118550071085)
+
 Despues de hacer el tratamiento de la TTY, vemos que podemos ejecutar como root python3, específicamente el archivo script.py.
 
 #### Script.py
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/8218592e-7b43-4a4a-ad38-efa2f445839f)
+
 Cambie de nombre el archivo `script.py` original a `ss.py` y cree otro `script.py` en el que puse el siguiente codigo:
 ```python
 import os
