@@ -37,30 +37,37 @@ Realizando Fuzzing no se encontró absolutamente nada.
 
 #### Codigo
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/ca79133c-8725-4e93-a508-ab5dd5689033)
+
 Al hacer **CTRL+U** para revisar el codigo nos encontramos con algo interesante... Un directorio llamado **/nibbleblog**.
 
 #### Nibbleblog
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/e4528d79-4128-467b-aa4a-88f6e456467f)
+
 Al entrar a Nibbleblog nos encontramos con una especie de blog.
 
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/b4655386-ba77-4a9c-9928-da37efa929f7)
+
 Mirando mas de cerca encontramos este enlace `http://172.17.0.2/nibbleblog/admin.php`.
 
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/063ba0cb-c979-41b8-afbd-10164aba614b)
+
 Al entrar es un inicio de sesión. Probamos las credenciales `admin` `admin` y estamos dentro como usuario administrador.
 
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/9a7b9ae1-7d3f-4bed-a1d4-61d36f78549b)
+
 Explorando encontramos la versión utilizada de Nibbleblog.
 
 # Fase 3- Explotación
 
 #### Searchsploit
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/1f1bbf96-b5e1-4903-aa13-5936f8a17346)
+
 Usando la herramienta `searchsploit` encontramos que es vulnerable a `File Upload`.
 
 #### MsfConsole
 
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/82b5508d-0391-420a-b992-d06f901d35e0)
+
 Estamos dentro! Al principio nos daba un error pero era porque el script aprovecha un plugin que no tenia instalado. Era instalarlo y listo. 
 Lista De Comandos:
 ```ruby
@@ -75,10 +82,12 @@ exploit
 
 #### Shell
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/e4fc6088-3661-48e6-97a8-2f6eb560c944)
+
 Subimos una revershell hecha en php desde msfconsole meterpreter para tener la shell a la que estoy acostumbrado y la ejecuto desde el directorio donde la subí desde el navegador.
 
 # Fase 4- Privilegios
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/4ba9a480-a951-4933-aa2c-542bd8bfcb24)
+
 Despues de hacer el tratamiento de la TTY. Ejecutamos el comando `sudo -l` y vemos que tenemos permisos de ejecución del binario `php`.
 
 #### PHP
