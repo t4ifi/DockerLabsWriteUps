@@ -40,10 +40,12 @@ Realizando fuzzing con Feroxbuster encontré el un /console que nos pide un pin 
 
 #### 4?
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/ae2ef32e-73a6-42c6-aa66-9d1a15bec91f)
+
 Si probamos inyectar un `{{2 + 2}}` en el campo PinguNombre nos devuelve un `Hello 4!` estamos inyectando codigo.
 
 #### ssti
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/301c238f-3e89-4af3-ab51-6f4361adab58)
+
 Probamos si es vulnerable a SSTI "Server-Side Template Injection" inyectamos este codigo:
 ```python
 {{ self.__init__.__globals__.__builtins__.__import__('os').popen('id').read() }}
