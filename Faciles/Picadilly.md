@@ -58,18 +58,22 @@ El archivo nos dice que el usuario es mateo y la contraseña es `hdvbfuadcb`, pe
 
 #### Cifrado Cesar
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/aa9a6729-9965-4490-b861-be3ecfa00048)
+
 Vamos a la pagina https://www.dcode.fr/cifrado-cesar, para poder descubrir la contraseña.
 
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/bc4864fa-c747-49ca-a87f-3bcdc5f22b7b)
+
 Según la pagina la contraseña es: `easycrxazy`.
 
 # Fase 3- Explotación
 
 #### Reverse shell
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/eb9e0a30-16fb-44df-813a-322ac6ce1a89)
+
 Subimos una reverse shell hecha en php.
 
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/d2e9962f-21b9-4ca5-a976-eedb1a3c1a78)
+
 Nos llega y somos el usuario www-data lo que sigue es el tratamiento de la TTY y Escalada de privilegios.
 
 
@@ -77,9 +81,11 @@ Nos llega y somos el usuario www-data lo que sigue es el tratamiento de la TTY y
 
 #### Mateo.-.
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/7a25bb15-97bf-4125-8720-c68a44b3e3fe)
+
 Vemos que existe el usuario `mateo`.
 
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/a723d284-17b7-49bd-ae1e-ffa692d99629)
+
 Intentamos cambiar a el con el comando `su mateo` y probamos la contraseña previamente encontrada pero no podemos. Mirando la contraseña:
 ```python
 easycrxazy
@@ -87,13 +93,16 @@ easycrxazy
 Vemos que esta mal, seria `easycreazy`, así que la probamos.
 
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/fad57fc4-2561-4257-8bf2-108b1dd92293)
+
 y funciono, somos el usuario mateo.
 
 #### php
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/f76adc5d-f89b-4bc8-a25b-1507f8735d34)
+
 Vemos que podemos ejecutar el binario php como usuario root.
 
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/9607af15-8ce0-4aed-b055-9a0c0ccebf92)
+
 En gtfobins, nos dice que para escalar privilegios tenemos que ejecutar una shell de esa forma, yo utilizo esta personalmente:
 ```php
 `sudo php -r 'system("/bin/bash");'`
