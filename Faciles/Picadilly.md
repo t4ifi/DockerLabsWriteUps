@@ -43,6 +43,7 @@ Aplicando fuzzing encontramos que existe el directorio /uploads.
 
 #### Mateo?
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/f1db7a3e-0a52-4485-8741-654041786fa9)
+
 En la pagina web, dentro del archivo `backup.txt` dice esto:
 ```python
 /// The users mateo password is ////
