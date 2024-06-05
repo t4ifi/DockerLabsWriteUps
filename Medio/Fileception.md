@@ -86,12 +86,14 @@ Encontré una pagina que al decodificarlo nos entrega una contraseña: `9h889h23
 
 #### SSH
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/7c6ad654-b170-4893-9df0-3900ac29e559)
+
 Nos intentamos conectar por ssh y tuvimos éxito!.
 
 # Fase 4- Privilegios
 
 #### sudo -l
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/84d6be44-b56d-41c9-9eea-5bab743277ee)
+
 Despues de realizar el tratamiento de la TTY, y realizar el comando sudo -l, no podemos.
 
 #### ls
