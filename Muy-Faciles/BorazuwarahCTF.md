@@ -44,6 +44,7 @@ Con feroxbuster encontramos un `index.html` pero nos redirige a la misma pagina,
 
 #### .jpeg
 ![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/82f4f2f9-67cf-4af0-80d7-efed1159632a)
+
 A la imagen la escaneamos con la herramienta `exiftool`, y en la Descripción de la imagen nos da el usuario `borazuwarah`, y en el titulo nos dice la contraseña pero esta vacia.
 
 # Fase 3- Explotación
