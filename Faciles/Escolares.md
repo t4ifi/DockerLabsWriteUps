@@ -80,7 +80,8 @@ Para realizar fuerza bruta al wordpress, con el usuario `luisillo` y el `rockyou
 ```
 No encontró ninguna contraseña. Tocara realizar un diccionario propio.
 
-![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/8a1285f2-1fc9-461b-ae30-994ff50ddf74)
+![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/9f8a5e9c-b6f7-4012-85d7-24098c35a7fd)
+
 Utilizamos la herramienta `cupp` para crear un diccionario personalizado.
 
 ```python
@@ -91,7 +92,7 @@ Trying luisillo / Luis1098181
 Nos encontró la contraseña!
 
 #### Wp-File-Manager
-![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/a1969b24-4ac3-40a0-a461-caa0b7082468)
+![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/f09a5289-2ade-4c97-88b9-87ddeba7ea0e)
 
 Dentro de wordpress encontramos un File Manager.
 
