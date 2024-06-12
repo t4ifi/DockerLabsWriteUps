@@ -96,7 +96,7 @@ Nos encontró la contraseña!
 
 Dentro de wordpress encontramos un File Manager.
 
-![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/5e88d99a-24ff-4fab-8154-ccf388828ec8)
+![image](https://github.com/haw441kings/DockerLabsWriteUps/assets/136659799/ae7f2758-4e12-4402-a8dd-bf10608425ff)
 
 El tema `twentytwentyfour` nos permite ver y ejecutar archivos.
 
